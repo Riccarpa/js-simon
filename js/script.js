@@ -16,6 +16,9 @@ alert quanti e quali dei numeri da indovinare sono stati individuati.
 let numbersList = [];
 let countDownNumber = 4;
 
+let delayNumber = 0;
+let userNumberlist = [];
+
 //link to html
 let htmlCountDown = document.getElementById('count-down');
 
@@ -30,17 +33,18 @@ numbersList = fiveRandom(numbersList);
 const memoryBox = alert('Memorizza questi numeri : ' + numbersList + ' successivamente premi ok ');
 
 //faccio partire il timer di 30 secondi
+
 let toZero = setInterval(countDown, 1000);
 
 
 //chiedo i numeri all'utente
 
+let numberMemorized = setTimeout(numberAsk, 5000);
 
-let userNumberlist = [];
-const userNumber = prompt('inserisci i numeri che ti ricordi');
-userNumberlist.push(userNumber);
+//confronto gli elementi dei due array
 
-console.log(userNumberlist);
+
+
 
 
 
@@ -64,9 +68,10 @@ function fiveRandom(arr) {
 
 // timer 30 sec
 function countDown() {
-    if (countDownNumber > 0) {
 
+    if (countDownNumber > 0) {
         countDownNumber--;
+
         htmlCountDown.innerHTML = countDownNumber;
     } else {
         clearInterval();
@@ -74,4 +79,17 @@ function countDown() {
     }
 
 
+
+}
+// delay prompt
+
+function numberAsk() {
+    while (userNumberlist.length < 5) {
+
+        let userNumber = prompt('inserisci i numeri che ti ricordi');
+        userNumberlist.push(userNumber);
+
+    }
+
+    return userNumberlist;
 }
