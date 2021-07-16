@@ -9,6 +9,45 @@ alert quanti e quali dei numeri da indovinare sono stati individuati.
  (Bonus: stampare in pagina il risultato, in alternativa all'alert.)
 */
 
+
+
+// INTRODURRE VARIABILI*****************************************
+
+let numbersList = [];
+let countDownNumber = 4;
+
+//link to html
+let htmlCountDown = document.getElementById('count-down');
+
+
+
+// INIZIO ESERCIZIO***********************************************
+
+//riempo array di numeri 
+numbersList = fiveRandom(numbersList);
+
+//genero un alert in cui sono presenti i numeri da ricordare
+const memoryBox = alert('Memorizza questi numeri : ' + numbersList + ' successivamente premi ok ');
+
+//faccio partire il timer di 30 secondi
+let toZero = setInterval(countDown, 1000);
+
+
+//chiedo i numeri all'utente
+
+
+let userNumberlist = [];
+const userNumber = prompt('inserisci i numeri che ti ricordi');
+userNumberlist.push(userNumber);
+
+console.log(userNumberlist);
+
+
+
+
+
+
+
 // FUNZIONI*****************************************************
 
 //numeri casuali
@@ -34,26 +73,5 @@ function countDown() {
         htmlCountDown.innerHTML = '';
     }
 
+
 }
-
-
-// INTRODURRE VARIABILI*****************************************
-
-let numbersList = [];
-let countDownNumber = 4;
-
-//link to html
-let htmlCountDown = document.getElementById('count-down');
-
-
-
-// INIZIO ESERCIZIO***********************************************
-
-//riempo array di numeri 
-numbersList = fiveRandom(numbersList);
-//genero un alert in cui sono presenti i numeri da ricordare
-const memoryBox = alert('Memorizza questi numeri : ' + numbersList + ' successivamente premi ok ');
-
-//faccio partire il timer di 30 secondi
-
-let toZero = setInterval(countDown, 1000);
