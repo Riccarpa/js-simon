@@ -14,7 +14,7 @@ alert quanti e quali dei numeri da indovinare sono stati individuati.
 // INTRODURRE VARIABILI*****************************************
 
 let numbersList = [];
-let countDownNumber = 4;
+let countDownNumber = 31;
 
 let delayNumber = 0;
 let userNumberlist = [];
@@ -42,8 +42,13 @@ setInterval(countDown, 1000);
 setTimeout(function() {
     //chiedo i numeri all'utente per 5 volte 
     while (userNumberlist.length < 5) {
+        let userNumber;
+        do {
 
-        let userNumber = parseInt(prompt('inserisci i numeri che ti ricordi'));
+            userNumber = parseInt(prompt('inserisci i numeri che ti ricordi'));
+
+        } while (!userNumber && isNaN(userNumber))
+
         //inserisco i numeri in un array
         userNumberlist.push(userNumber);
 
@@ -57,7 +62,7 @@ setTimeout(function() {
     for (i = 0; i < userNumberlist.length; i++) {
         // se il numero dell'utente è contenuto nei numeri casuali aumento il numero delle risposte corrette
         if (numbersList.includes(userNumberlist[i])) {
-            correctNumber += userNumberlist[i]; //registro i numeri corretti
+            correctNumber += ' I numeri che hai indovinato sono ' + userNumberlist[i]; //registro i numeri corretti
             numberGuessed++;
         }
 
@@ -65,16 +70,15 @@ setTimeout(function() {
     }
     console.log(correctNumber);
     //inserisco in un alert il numero di risposte corrette e quali sono.
-    alert('Hai indovinato ' + numberGuessed + ' numeri. ' + ' I numeri che hai indovinato sono ' + correctNumber + ' ');
+    alert('Hai indovinato ' + numberGuessed + ' numeri. ' + correctNumber + ' ');
 
-}, 5000)
+}, 32000)
 
 //confronto gli elementi dei due array
 
 
 
-
-
+y
 
 
 
